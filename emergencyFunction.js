@@ -60,3 +60,10 @@ function clearHistory() {
     }
     alert("Call history cleared.");
 }
+const hearts = document.querySelectorAll('.fa-heart');
+hearts.forEach(heart => {
+    heart.style.cursor = 'pointer';
+    heart.addEventListener('click', (event) => {
+        increaseCount("heart", 1);
+    });
+});
