@@ -2,25 +2,96 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency Service Directory</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="styels/styel.css">
-    <title>জরুরি সেবা ডিরেক্টরি</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
 <body>
-    <div class="px-[60px] border-2 border-red-500 w-[1920px] h-[90px]">
-        <div class="flex gap-[8px] mt-[20px] border-2 border-blue-400 h-[50px]">
-            <img class=" h-[50px]  " src="assets/logo.png" alt="">
-            <h1 class=" font-bold text-[#006747] ">Emergency <br>Service</h1>
-        </div>
-        <div>
-            
-        </div>
-    </div>
+    <header>
+        <nav
+            class="flex items-center flex-col md:flex-row text-white justify-normal md:justify-between md:p-4 md:pr-10 md:pl-10">
+            <div class="flex items-center text-green-700 font-extrabold text-2xl mb-3">
+                <img src="assets/logo.png" alt="logo" class="h-16 mr-4 mt-2 md:mt-0" />
+                Emergency <br />Services
+            </div>
+            <div class="flex items-center mb-3 m-1">
+                <div
+                    class="bg-green-100 text-black pr-5 pl-5 md:pr-8 md:pl-8 pt-2 pb-2 rounded-3xl border-none mr-2 md:mr-4 font-extrabold flex">
+                    <span id="heart">0</span> <img src="assets/heart.png" alt="heart" class="h-6 ml-1" />
+                </div>
+                <div
+                    class="bg-green-100 text-black pr-5 pl-5 md:pr-8 md:pl-8 pt-2 pb-2 rounded-3xl border-none mr-2 md:mr-4 font-extrabold flex">
+                    <span id="coin">100</span> <img src="assets/coin.png" alt="heart" class="h-6 ml-1" />
+                </div>
+                <div class="bg-green-600 pr-5 pl-5 md:pr-8 md:pl-8 pt-2 pb-2 rounded-3xl border-none text-white flex">
+                    <span id="copy" class="mr-1">0</span> Copy
+                </div>
+            </div>
+        </nav>
+        <main class="bg-[#F5FFF6]">
+            <div
+                class="bg-gradient-to-r from-[#013223] via-[#006747] to-[#013223] h-72 md:h-48 flex flex-col p-2 items-center justify-center text-center">
+                <div><img src="assets/logo-dark.png" alt="logo" class="h-20" /></div>
+                <div class="text-white font-bold text-4xl">Emergency Service Directory</div>
+                <div class="text-white mt-2 font-semibold">
+                    Government Emergency Services at Your Fingertip – A Project by Government of the People’s Republic
+                    of
+                    Bangladesh
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 m-4 md:m-26 lg:m-6">
+                <div class="grid gap-6 auto-rows-fr">
+                    <!-- National Emergency Number Card -->
+                    <div class="card card-border bg-base-100 shadow-md">
+                        <div class="card-body">
+                            <div class="flex justify-between items-center">
+                                <div class="bg-red-200 p-3 rounded-lg">
+                                    <img src="assets/emergency.png" alt="icon" class="h-6" />
+                                </div>
+                                <div><i class="fa-regular fa-heart text-lg"></i></div>
+                            </div>
+                            <span class="font-bold text-xl whitespace-nowrap overflow-hidden text-ellipsis">National
+                                Emergency Number</span>
+                            <span>National Emergency</span>
+                            <span class="font-bold text-3xl">999</span>
+                            <span class="badge bg-gray-100 border-none p-4 text-black rounded-2xl">All</span>
+                            <div class="flex justify-between items-center mt-4">
+                                <button class="btn w-1/2 mr-2 rounded-lg"
+                                    onclick="copyContent('National Emergency Number','999')">
+                                    <i class="fa-solid fa-copy"></i> Copy
+                                </button>
+                                <button class="btn bg-[green] text-white w-1/2 rounded-lg"
+                                    onclick="callNumber('National Emergency Number','999')">
+                                    <i class="fa-solid fa-phone"></i> Call
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!--  Call History -->
+                    <div class="bg-base-100 p-6 rounded-xl shadow-md" id="call-history">
+                        <div class="flex flex-row items-center justify-between">
+                            <div class="font-bold"><i class="fa-regular fa-clock"></i> Call History</div>
+                            <div>
+                                <button type="button"
+                                    class="btn bg-green-600 pr-8 pl-8 pt-4 pb-4 rounded-3xl border-none text-white"
+                                    onclick="clearHistory()">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </main>
+    </header>
+
 </body>
 
 </html>
